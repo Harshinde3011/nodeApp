@@ -1,12 +1,12 @@
 pipeline{
   agent any
   stages{
-    stage{"checkout stage"}{
+    stage{"checkoutstage"}{
       steps{
         checkout scm
       }
     }
-    satge{"build Image"}{
+    stage{"buildImage"}{
       steps{
          sh 'docker build -t my-node-app:1.0 .'
       }
