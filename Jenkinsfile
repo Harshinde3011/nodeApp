@@ -8,7 +8,7 @@ pipeline{
     }
     satge{"build Image"}{
       steps{
-         sh `docker build -t my-node-app:1.0 .`
+         sh 'docker build -t my-node-app:1.0 .'
       }
     }
   }
