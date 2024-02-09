@@ -13,7 +13,7 @@ pipeline{
     }
     stage("runcontainer"){
       steps{
-         sh 'docker run -d -p 8000:8000 my-node-app:1.0'
+         sh 'docker run -d -p 8000:8000 my-node-app:1.0 --name nodecontainer'
       }
     }
   }
