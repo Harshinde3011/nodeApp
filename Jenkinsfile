@@ -25,7 +25,6 @@ pipeline{
     stage("Push dockerImage dockerHub"){
       withCredentials([usernamePassword(credentialsId:'docker_cred',passwordVariable:"DOCKERHUB_PASSWORD",usernameVariable:"DOCKERHUB_USERNAME")]){
         sh 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
-        sh 'docker tag my-node-app:v${BUILD_NUMBER} myrepo1922/my-node-app:v${BUILD_NUMBER}'
         sh 'docker push myrepo1922/my-node-app:v${BUILD_NUMBER}'
         sh 'docker logout'
       }
